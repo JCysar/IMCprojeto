@@ -22,12 +22,12 @@ app.post("/user", (req, res) => {
     })
 });
 
-app.get("/user", (req, res) => {
+app.get("/users", (req, res) => {
     const { username, password } = req.body;
     let SQL = "SELECT * FROM user WHERE username = ? AND password = ?";
     let values = { username, password };
     db.query(SQL, values, (err, result) => {
-        if(err) {
+        if (err) {
             console.log(err)
         }
         else {
